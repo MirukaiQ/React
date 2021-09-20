@@ -1,23 +1,23 @@
 import React from "react";
-
-class UserData extends React.Component {
-
-}
+import data from "../../data";
 
 class UserCard extends React.Component {
+    constructor(props) {
+        super(props)
+    } 
     render() {
-        const { userName, userPicture, userDescription } = this.props
+        const { user } = this.props
         return (
             <article className="userCard">
                 <div className="imgWrapper">
                     <img
                         className="img"
-                        src={userPicture}
-                        alt={userName}
+                        src={user.profilePicture}
+                        alt={user.firstName}
                     />
                 </div>
-                <h2 className="cardName">{userName}</h2>
-                <p className="cardDescription">{userDescription}</p>
+                <h2 className="cardName">{user.firstName}</h2>
+                <p className="cardDescription">Tese</p>
             </article>
         )
     }
