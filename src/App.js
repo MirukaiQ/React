@@ -1,0 +1,27 @@
+import React from 'react';
+import { Component } from 'react';
+import Counter from "./components/Counter"
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      step:1
+    }
+  }
+  changeStep = (e) => {
+    const vaa = parseInt(e.target.value)
+    return this.setState(() => {
+      return {step: vaa}
+    }) 
+  }
+  render() {
+    const {step} = this.state
+    return <> 
+    <Counter step={step} /> 
+    <input value={step} name="changer" type="number" onChange={this.changeStep}></input>
+    </>
+  }
+}
+
+export default App;
