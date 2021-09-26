@@ -10,16 +10,16 @@ class App extends Component {
     }
   }
   changeStep = (e) => {
-    const vaa = parseInt(e.target.value)
+    const value = parseInt(e.target.value)
     return this.setState(() => {
-      return {step: vaa}
+      return {step: value}
     }) 
   }
   render() {
     const {step} = this.state
     return <> 
     <Counter step={step} /> 
-    <input value={step} name="changer" type="number" onChange={this.changeStep}></input>
+    <input value={step} type="number" onChange={this.changeStep}></input>
     </>
   }
 }
