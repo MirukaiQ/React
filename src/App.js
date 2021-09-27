@@ -14,21 +14,27 @@ class App extends Component {
     super(props)
     this.state = {
       index: 0,
-      interval: 1500
+      interval: 1500,
+      intervalId: null
     }
   }
   slide = () => {
     return this.setState((state) => {
-      return { index: state.index !== 2 ? state.index + 1 : state.index = 0 }
+      return {index: (state.index + 1) % data.length}
     })
   }
   slideShow = () => {
     return this.setState((state) => {
-      return setInterval((this.slide), state.interval)
+      if (!this.intervalId) {
+         this.intervalId = setInterval((this.slide), state.interval)
+      }
     })
   }
   slideStop = () => {
-    return clearInterval(this.slideShow)
+    if (this.intervalId !== null) {
+      clearInterval(this.intervalId)
+      this.intervalId = null
+    }
   }
   slideSpeed = (e) => {
     return this.setState(() => {
@@ -43,7 +49,7 @@ class App extends Component {
         <button className="sliderButton" onClick={this.slide} />
         <button className="sliderButton" onClick={this.slideShow} />
         <input type="number" value={(interval)} onChange={this.slideSpeed}/>
-        <button onChange={this.slideStop}>stop</button>
+        <button onClick={this.slideStop}>stop</button>
       </div>
     </>
   }
