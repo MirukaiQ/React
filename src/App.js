@@ -1,58 +1,46 @@
-import React from 'react';
+import userEvent from '@testing-library/user-event';
+import React, { useState, useEffect, useContext, useRef, useMemo, useCallback } from 'react';
 import { Component } from 'react';
-import Slider from './components/Slider ';
-import "./sliderButton.css"
+import ItemsList from './components/ItemsList';
 
-const data = [
-  { link: "https://cdn.profile.ru/wp-content/uploads/2021/04/chashka-kofe-zerna-lopatka.jpg" },
-  { link: "https://cdn.profile.ru/wp-content/uploads/2021/08/Kofe-zerna-korica.jpg" },
-  { link: "https://cdn.profile.ru/wp-content/uploads/2021/06/kofe-zerna-kofemolka-chashka.jpg" },
-]
+const App = () => {
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      index: 0,
-      interval: 1500,
-      intervalId: null
+  const [ value, setValue ] = useState(1)
+  const [ text, setText ] = useState("TEXT")
+  const [ hide, setHide] = useState("hide text")
+  
+  const textHandler = () => {
+    if(text !== null) {
+      setText(null)
+      setHide("show text")
+    }
+    else {
+      setText("TEXT")
+      setHide("hide text")
     }
   }
-  slide = () => {
-    return this.setState((state) => {
-      return {index: (state.index + 1) % data.length}
-    })
+  
+  if (value < 0) {
+    setValue(value + 1)
   }
-  slideShow = () => {
-    return this.setState((state) => {
-      if (!this.intervalId) {
-         this.intervalId = setInterval((this.slide), state.interval)
-      }
-    })
-  }
-  slideStop = () => {
-    if (this.intervalId !== null) {
-      clearInterval(this.intervalId)
-      this.intervalId = null
-    }
-  }
-  slideSpeed = (e) => {
-    return this.setState(() => {
-      return {interval: e.target.value}
-    })
-  }
-  render() {
-    const { index, interval } = this.state
-    return <>
-      <div className="slider">
-        <Slider data={data[index]} />
-        <button className="sliderButton" onClick={this.slide} />
-        <button className="sliderButton" onClick={this.slideShow} />
-        <input type="number" value={(interval)} onChange={this.slideSpeed}/>
-        <button onClick={this.slideStop}>stop</button>
-      </div>
+
+  const generateItems = useCallback(() => {
+    return new Array(value).fill("").map((_, i) => `Element ${i + 1}`)
+  },[value]) 
+  
+  
+  return (
+    <>
+    <div>
+      <h1>Value: {value}</h1>
+      <button onClick={() => setValue(value + 1)}>increase</button>
+      <button onClick={() => setValue(value - 1)}>decrease</button>
+      <div>{text}</div>
+      <button onClick={textHandler}>{hide}</button>
+      <ItemsList getItems={generateItems}/>
+    </div>
     </>
-  }
+  );
 }
 
 export default App;
