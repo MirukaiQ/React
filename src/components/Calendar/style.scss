@@ -1,0 +1,58 @@
+.calendar {
+    background-color: #38CEC4;
+    width: 750px;
+    height: 400px;
+    border: 10px solid #219990;
+    .calendarLeftSide {
+        .calendarDay {
+            padding-top: 50px;
+        }
+        .calendarDay {
+            position: absolute;
+            top: -10px;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+        .calendarNumber {
+            position: absolute;
+            top: 10px;
+            margin-left: 500px;
+            font-size: 60px;
+        }
+        color:#FFFFFF;
+    }
+    .calendarRightSide {
+        height: 200px;
+        margin-top: 200px;
+        .calendarMainContent {
+            margin-left: 30px;
+        }
+        .day {
+            background: none;
+            border: none;
+            font-size: 25px;
+            color: #B7B7B7;
+        }
+        .day:first-child {
+            display: none;
+        }
+        .day:nth-child(5) {
+            margin-top: 20px;
+        }
+        .calendarHeader {
+            position: absolute;
+            top:185px;
+            font-size: 40px;
+            color: #219990;
+            margin-left: 40px;
+        }
+        .calendarButton {
+            background-color: red;
+            width: 25px;
+            height: 20px;
+            margin-left: 42px;
+            margin-top: 80px;
+        }
+        background-color: #F5F5F5;
+    }
+}
