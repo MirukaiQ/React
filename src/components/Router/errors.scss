@@ -1,0 +1,46 @@
+.first-error,
+.second-error,
+.third-error,
+.fourth-error,
+.fifth-error,
+.email-error,
+.password-error,
+.sixth-error {
+  border: 2px solid red;
+  border-radius: 5px;
+  width: 273px;
+  position: absolute;
+  color: red;
+  font-weight: 800;
+}
+.email-error,
+.password-error {
+  width: 536px;
+}
+.first-error, .second-error {
+    top: 393px;
+}
+.third-error, .fourth-error {
+    top: 480px
+}
+.first-error, .third-error, .fifth-error {
+  left: 623px;
+}
+.second-error, .fourth-error, .sixth-error {
+  left: 935px;
+}
+.fifth-error, .sixth-error {
+    top: 567px;
+}
+.error-field {
+    border: 2.5px solid;
+    border-color: red !important;
+}
+.email-error {
+  top: 327px;
+  left: 655px;
+}
+.password-error {
+  left: 655px;
+  top: 415px;
+}

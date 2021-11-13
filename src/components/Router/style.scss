@@ -1,0 +1,87 @@
+body {
+  background-color: #3ea9f5;
+  color: white
+}
+// HEADER 
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  .header-link {
+    color: white;
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    border: 0.5px solid white;
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+}
+// SINGUP PAGE 
+.singup-main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .singup-main-header {
+    margin-top: 70px;
+    .header-name {
+      font-size: 40px;
+      margin-left: 50px;
+    }
+    .header-text {
+      font-size: 25px;
+      margin-right: 10px;
+    }
+  }
+  .singup-fields {
+    .field {
+      font-size: 17px;
+      padding: 23px 28px;
+      margin: 1px 15px;
+      box-sizing: border-box;
+      border-radius: 4.5px;
+      border-color: transparent;
+    }
+  }
+}
+.radio-field {
+  border: 1px solid white;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-top: 15px;
+  width: 581px;
+  height: 70px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  .radio-field-text {
+    font-size: 16px;
+    padding-left: 50px;
+  }
+  .radio-field-heading {
+    padding-left: 10px;
+  }
+}
+.check {
+  margin-left: 36px;
+}
+.singup-submit, .login-submit {
+  color:white;
+  font-weight: 700;
+  background-color:#30D2D0;
+  border: transparent;
+  font-size: 17px;
+  padding: 22px 240px;
+  margin-left: 15px;
+}
+// SINGUP FOOTER 
+.singup-footer-link {
+  color: white;
+  padding-left: 7px;
+}
+.singup-footer-text {
+  font-size: 20px;
+  padding-right: 15px;
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+.login-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.field {
+  font-size: 17px;
+  padding: 23px 28px;
+  margin: 1px 15px;
+  box-sizing: border-box;
+  border-radius: 4.5px;
+  border-color: transparent;
+}
+.login-field, .login-submit {
+    width: 545px;
+}
+.login-checkbox {
+    margin-left: 20px;
+}
+.login-link {
+    text-decoration: none;
+    margin-left: 290px;
+    color: white;
+}
+.login-submit {
+    font-size: 20px !important;
+}
