@@ -62,7 +62,10 @@ const Login = () => {
                   <label htmlFor="checkbox" className="singup-checkbox-text">
                     Remember Me
                   </label>
-                  <a className="login-link" href="https://www.squadhelp.com/forgot_password.php">
+                  <a
+                    className="login-link"
+                    href="https://www.squadhelp.com/forgot_password.php"
+                  >
                     Forgot Password
                   </a>
                 </p>
